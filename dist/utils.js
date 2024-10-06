@@ -12,20 +12,10 @@ export function populateUser(isReturning, userName) {
     }
     userNameDisplay.innerHTML = userName;
 }
-function add(firstValue, secondValue) {
-    let result;
-    if (typeof firstValue === 'number' && typeof secondValue === 'number') {
-        result = firstValue + secondValue;
-    }
-    if (typeof firstValue === 'string' && typeof secondValue === 'string') {
-        result = firstValue + ' ' + secondValue;
-    }
-    if (typeof firstValue === 'number' && typeof secondValue === 'string') {
-        console.log('cannot perform this addition');
-    }
-    if (typeof firstValue === 'string' && typeof secondValue === 'number') {
-        console.log('cannot perform this addition');
+export function showDetails(value, element, price) {
+    if (value) {
+        const priceDisplay = document.createElement('div');
+        priceDisplay.innerHTML = price.toString() + '/night';
+        element.appendChild(priceDisplay);
     }
 }
-const combinedReviews = add(5, 1);
-const firstNameLastName = add('Ania', 'Kubow');

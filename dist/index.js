@@ -1,5 +1,9 @@
-// Union Types
-import { showReviewTotal, populateUser } from './utils.js';
+// Literal Types
+// 1. Based on what we have learnt about literal types with the price, can you make
+// a Country literal type? You only have to include the countries we are dealing with in 
+// the project.
+// 2. Can you create a file and store all your types aliases in there?
+import { showReviewTotal, populateUser, showDetails } from './utils.js';
 import { Permissions, LoyaltyUser } from './enums.js';
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer');
@@ -87,6 +91,7 @@ for (let i = 0; i < properties.length; i++) {
     const image = document.createElement('img');
     image.setAttribute('src', properties[i].image);
     card.appendChild(image);
+    showDetails(you.permissions, card, properties[i].price);
     propertyContainer.appendChild(card);
 }
 let currentLocation = ['London', '11.03', 17];
