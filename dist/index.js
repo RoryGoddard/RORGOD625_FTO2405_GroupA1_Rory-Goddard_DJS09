@@ -1,8 +1,9 @@
+// Union Types
 import { showReviewTotal, populateUser } from './utils.js';
 import { Permissions, LoyaltyUser } from './enums.js';
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer');
-let isOpen;
+let isLoggedIn;
 // Reviews
 const reviews = [
     {
@@ -21,7 +22,8 @@ const reviews = [
         name: 'Omar',
         stars: 4,
         loyaltyUser: LoyaltyUser.SILVER_USER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: 'Great hosts, location was a bit further than said.'
     },
 ];
 const you = {
