@@ -1,21 +1,12 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from './utils.js';
+import { Permissions, LoyaltyUser } from './enums.js';
+import MainProperty from './classes.js';
 const propertyContainer = document.querySelector('.properties');
 const reviewContainer = document.querySelector('.reviews');
 const container = document.querySelector('.container');
 const button = document.querySelector('button');
 const footer = document.querySelector('.footer');
 let isLoggedIn;
-var Permissions;
-(function (Permissions) {
-    Permissions["ADMIN"] = "ADMIN";
-    Permissions["READ_ONLY"] = "READ_ONLY";
-})(Permissions || (Permissions = {}));
-var LoyaltyUser;
-(function (LoyaltyUser) {
-    LoyaltyUser["GOLD_USER"] = "GOLD_USER";
-    LoyaltyUser["SILVER_USER"] = "SILVER_USER";
-    LoyaltyUser["BRONZE_USER"] = "BRONZE_USER";
-})(LoyaltyUser || (LoyaltyUser = {}));
 // Reviews
 const reviews = [
     {
@@ -131,14 +122,6 @@ function addReviews(array) {
 button.addEventListener('click', () => addReviews(reviews));
 let currentLocation = ['London', '11.03', 17];
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°';
-// Classes
-class MainProperty {
-    constructor(src, title, reviews) {
-        this.src = src;
-        this.title = title;
-        this.reviews = reviews;
-    }
-}
 let yourMainProperty = new MainProperty('images/italian-property.jpg', 'Italian House', [{
         name: 'Olive',
         stars: 5,
