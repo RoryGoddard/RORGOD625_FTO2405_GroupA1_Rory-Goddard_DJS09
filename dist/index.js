@@ -1,28 +1,17 @@
-import { showReviewTotal, populateUser } from './utils.js'
-
+import { showReviewTotal, populateUser } from './utils.js';
 document.addEventListener('DOMContentLoaded', () => {
     const propertyContainer = document.querySelector('.properties');
     console.log('propertyContainer:', propertyContainer);
-
     const reviewTotalDisplay = document.querySelector('#reviews');
     console.log('reviewTotalDisplay:', reviewTotalDisplay);
-
     const returningUserDisplay = document.querySelector('#returning-user');
     console.log('returningUserDisplay:', returningUserDisplay);
-
     const userNameDisplay = document.querySelector('#user');
     console.log('userNameDisplay:', userNameDisplay);
-
     // Rest of your code...
-    let isOpen: boolean
-
+    let isOpen;
     // Reviews
-    const reviews : { 
-        name: string; 
-        stars: number; 
-        loyaltyUser: boolean; 
-        date: string
-        }[] = [
+    const reviews = [
         {
             name: 'Sheia',
             stars: 5,
@@ -41,37 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
             loyaltyUser: true,
             date: '27-03-2021'
         },
-    ]
-
+    ];
     // User
-    const you: {
-        firstName: string;
-        lastName: string;
-        isReturning: boolean;
-        age: number;
-        stayedAt: string[]
-    } = {
+    const you = {
         firstName: 'Bobby',
         lastName: 'Brown',
         isReturning: true,
         age: 35,
         stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-    }
-
+    };
     // Array of Properties
-    const properties : {
-        image: string;
-        title: string;
-        price: number;
-        location: {
-            firstLine: string;
-            city: string;
-            code: number;
-            country: string;
-        };
-        contact: string;
-        isAvailable: boolean;
-    }[] = [
+    const properties = [
         {
             image: 'images/colombia-property.jpg',
             title: 'Colombian Shack',
@@ -83,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 country: 'Colombia'
             },
             contact: 'marywinkle@gmail.com',
-            isAvailable: true  
+            isAvailable: true
         },
         {
             image: 'images/poland-property.jpg',
@@ -96,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 country: 'Poland'
             },
             contact: 'garydavis@hotmail.com',
-            isAvailable: false 
+            isAvailable: false
         },
         {
             image: 'images/london-property.jpg',
@@ -111,26 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact: 'andyluger@aol.com',
             isAvailable: true
         }
-    ]
-
+    ];
     // Functions
-    showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
-    populateUser(you.isReturning, you.firstName)
-
+    showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+    populateUser(you.isReturning, you.firstName);
     //Add the properties
     for (let i = 0; i < properties.length; i++) {
-        const card = document.createElement('div')
-        card.classList.add('card')
-        card.innerHTML = properties[i].title
-        const image = document.createElement('img')
-        image.setAttribute('src', properties[i].image)
-        card.appendChild(image)
-        propertyContainer.appendChild(card)
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = properties[i].title;
+        const image = document.createElement('img');
+        image.setAttribute('src', properties[i].image);
+        card.appendChild(image);
+        propertyContainer.appendChild(card);
     }
-
-
 });
-
-
-

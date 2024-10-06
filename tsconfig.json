@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "module": "ES6",       // Use ES6 module system
+      "target": "ES6",       // Compile to ES6 (or ES2015) syntax
+      "outDir": "./dist"     // Output the JavaScript files to a 'dist' folder
+    }
+  }
+  
