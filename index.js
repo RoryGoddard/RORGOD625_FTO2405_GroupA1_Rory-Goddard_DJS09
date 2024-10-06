@@ -1,7 +1,3 @@
-// Number Types mini-challenge 10 10.2
-// Write a function that will only accept numbers and attend to 
-// all TypeScript weakness flags.
-// : number
 var returningUserDisplay = document.querySelector('#returning-user');
 var userNameDisplay = document.querySelector('#user');
 var reviewTotalDisplay = document.querySelector('#reviews');
@@ -32,9 +28,12 @@ function showReviewTotal(value, reviewer, isLoyalty) {
 }
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 var you = {
-    userName: 'Bobby',
+    firstName: 'Bobby',
+    lastName: 'Brown',
     isReturning: true,
+    age: 35
 };
+console.log(you.userName);
 function populateUser(isReturning, userName) {
     if (isReturning) {
         returningUserDisplay.innerHTML = 'back';
