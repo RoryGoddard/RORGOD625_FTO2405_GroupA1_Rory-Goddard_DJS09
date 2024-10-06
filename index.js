@@ -35,7 +35,7 @@ var you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
 function populateUser(isReturning, userName) {
-    if (isReturning) {
+    if (isReturning == true) {
         returningUserDisplay.innerHTML = 'back';
     }
     userNameDisplay.innerHTML = userName;
