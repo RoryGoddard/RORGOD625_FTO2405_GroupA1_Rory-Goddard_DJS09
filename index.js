@@ -31,13 +31,13 @@ var you = {
     firstName: 'Bobby',
     lastName: 'Brown',
     isReturning: true,
-    age: 35
+    age: 35,
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
-console.log(you.userName);
 function populateUser(isReturning, userName) {
     if (isReturning) {
         returningUserDisplay.innerHTML = 'back';
     }
     userNameDisplay.innerHTML = userName;
 }
-populateUser(you.isReturning, you.userName);
+populateUser(you.isReturning, you.firstName);
